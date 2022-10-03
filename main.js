@@ -12,9 +12,9 @@ let addWindow;
 
 // Listen for app to be ready
 app.on('ready', function(){
-  // Create new window
+  // Create new windows
   mainWindow = new BrowserWindow({});
-  // Load html in window
+  // Load html in windows
   mainWindow.loadURL(url.format({
     pathname: path.join(__dirname, 'mainWindow.html'),
     protocol: 'file:',
@@ -25,13 +25,13 @@ app.on('ready', function(){
     app.quit();
   });
 
-  // Build menu from template
+  // Build menu from templates
   const mainMenu = Menu.buildFromTemplate(mainMenuTemplate);
   // Insert menu
   Menu.setApplicationMenu(mainMenu);
 });
 
-// Handle add item window
+// Handle add item windows
 function createAddWindow(){
   addWindow = new BrowserWindow({
     width: 300,
@@ -43,7 +43,7 @@ function createAddWindow(){
     protocol: 'file:',
     slashes:true
   }));
-  // Handle garbage collection
+  // Handle garbage collections
   addWindow.on('close', function(){
     addWindow = null;
   });
